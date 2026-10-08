@@ -4,7 +4,7 @@ trigger:
       - main
 
 pool:
-  name: 'windows-latest'
+  vmImage: 'windows-latest'
 
 stages:
 
@@ -45,7 +45,7 @@ stages:
     - task: AzureResourceGroupDeployment@2
       displayName: "Deploy ARM Template to UAT Data Factory"
       inputs:
-        azureSubscription: "Azure subscription 1"
+        azureSubscription: "DEVUATPRODConn"
         action: "Create Or Update Resource Group"
         resourceGroupName: "jai-26-rg"
         location: "East US"
@@ -82,7 +82,7 @@ stages:
     - task: AzureResourceGroupDeployment@2
       displayName: "Deploy ARM Template to PROD Data Factory"
       inputs:
-        azureSubscription: "Azure subscription 1"
+        azureSubscription: "DEVUATPRODConn"
         action: "Create Or Update Resource Group"
         resourceGroupName: "jai-26-rg"
         location: "East US"
