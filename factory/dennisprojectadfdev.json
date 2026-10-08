@@ -1,0 +1,15 @@
+{
+	"name": "dennisprojectadfdev",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fbf821d9-b951-4347-8022-9254273adb3a",
+		"tenantId": "2cadeff4-e0d9-46f1-86b4-3570ba781ffe"
+	}
+}
