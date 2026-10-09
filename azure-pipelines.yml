@@ -45,7 +45,7 @@ stages:
     - task: AzureResourceGroupDeployment@2
       displayName: "Deploy ARM Template to UAT Data Factory"
       inputs:
-        azureSubscription: "Azure subscription 1"
+        azureSubscription: "DEVUATPRODConn"
         action: "Create Or Update Resource Group"
         resourceGroupName: "jai-26-rg"
         location: "East US"
@@ -58,8 +58,10 @@ stages:
 
         overrideParameters: >
           -factoryName "dennisprojectadfuat"
+          -LS_ADLS_account "devadlsdennisuat"
+          -LS_ADLS_fileSystem "project"
           -adls2adf_ls_accountKey "$(uat_adls_account_key)"
-          -adls2adf_ls_properties_typeProperties_url "https://denispadlsuat.dfs.core.windows.net/"
+          -adls2adf_ls_properties_typeProperties_url "https://devadlsdennisuat.dfs.core.windows.net/"
 
 
         deploymentMode: Incremental
@@ -82,7 +84,7 @@ stages:
     - task: AzureResourceGroupDeployment@2
       displayName: "Deploy ARM Template to PROD Data Factory"
       inputs:
-        azureSubscription: "Azure subscription 1"
+        azureSubscription: "DEVUATPRODConn"
         action: "Create Or Update Resource Group"
         resourceGroupName: "jai-26-rg"
         location: "East US"
@@ -95,7 +97,9 @@ stages:
 
         overrideParameters: >
           -factoryName "dennisprojectadfprod"
+          -LS_ADLS_account "devadlsdennisprod"
+          -LS_ADLS_fileSystem "project"
           -adls2adf_ls_accountKey "$(prod_adls_account_key)"
-          -adls2adf_ls_properties_typeProperties_url "https://denispadlsprod.dfs.core.windows.net/"
+          -adls2adf_ls_properties_typeProperties_url "https://devadlsdennisprod.dfs.core.windows.net/"
 
         deploymentMode: Incremental
