@@ -58,8 +58,6 @@ stages:
 
         overrideParameters: >
           -factoryName "dennisprojectadfuat"
-          -LS_ADLS_account "devadlsdennisuat"
-          -LS_ADLS_fileSystem "project"
           -adls2adf_ls_accountKey "$(uat_adls_account_key)"
           -adls2adf_ls_properties_typeProperties_url "https://devadlsdennisuat.dfs.core.windows.net/"
 
